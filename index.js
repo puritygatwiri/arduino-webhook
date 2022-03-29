@@ -29,6 +29,6 @@ app.post('/commands', function (req, res) {
     return res.send('command recorded');
 });
 
-app.listen('5000', function(){
-    console.log('Server listening on port 5000');
+app.listen('80', function(){
+    console.log('Server listening on port 80');
 });
