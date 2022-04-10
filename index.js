@@ -1,34 +1,21 @@
-var express = require('express');
-var app = express();
-// for parsing the body in POST request
-var bodyParser = require('body-parser');
+//Require express and body-parser
+const express = require("express");
+const bodyParser = require("body-parser");
 
-var commands =[{
-    name: "hello"
-}];
+//Initialize express and define a port
+const app = express();
+const PORT = 80;
 
-app.use(bodyParser.urlencoded({ extended: false }));
+//Tell express to use body-parser's JSON parsing
 app.use(bodyParser.json());
-
-// GET /commands
-app.get('/commands', function(req, res){
-    return res.json(commands);    
+app.post("/hook", (req, res) => {
+    console.log(req.body);//call your action on the request here
+    res.status(200).end();//Responding is important
 });
 
-/* POST /commands
-    {
-        "command": {
-            "name": "hello world"
-        }
-    }
-*/
-app.post('/commands', function (req, res) {
-    var command = req.body.command;
-    commands.push(command);
+// app.get("/", (req,res) =>{
+//     res.send('hellos guys');
+// })
 
-    return res.send('command recorded');
-});
-
-app.listen('80', function(){
-    console.log('Server listening on port 80');
-});
+//Start express on the defined port
+app.listen(PORT, () => console.log('server running on port &{PORT}'));

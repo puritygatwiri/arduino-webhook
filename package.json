@@ -1,20 +1,25 @@
 {
   "name": "webhook",
   "version": "1.0.0",
-  "description": "",
+  "description": "\"# arduino-webhook\"",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/puritygatwiri/arduino-webhook.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.19.2",
-    "express": "^4.17.3"
+  "bugs": {
+    "url": "https://github.com/puritygatwiri/arduino-webhook/issues"
   },
-  "engines": {
-    "node": "16.14.2"
+  "homepage": "https://github.com/puritygatwiri/arduino-webhook#readme",
+  "dependencies": {
+    "body-parse": "^0.1.0",
+    "body-parser": "^1.20.0",
+    "express": "^4.17.3"
   }
 }
